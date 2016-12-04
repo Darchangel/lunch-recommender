@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-using LunchRecommender.Models;
+﻿using LunchRecommender.Models;
+using LunchRecommender.Repositories;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,6 +7,13 @@ namespace LunchRecommender.Controllers
 {
     public class LunchRecommendationController : Controller
     {
+        private readonly ILunchPlaceRepository _lunchPlaceRepository;
+
+        public LunchRecommendationController(ILunchPlaceRepository lunchPlaceRepository)
+        {
+            _lunchPlaceRepository = lunchPlaceRepository;
+        }
+
         // GET: /<controller>/
         [HttpGet]
         public IActionResult Index()
@@ -20,7 +23,9 @@ namespace LunchRecommender.Controllers
 
         public IActionResult Suggest()
         {
-            return View("Index", new LunchPlace("Boguette", "Next to Markthal", LunchPrice.Medium, LunchSpeed.Fast));
+            LunchPlace suggestedLunchPlace = _lunchPlaceRepository.GetRandomLunchPlace();
+
+            return View("Index", suggestedLunchPlace);
         }
 
         public IActionResult Error()
