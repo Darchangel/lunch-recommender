@@ -45,3 +45,21 @@ textarea {
     margin: 1em;
     margin-left: 2em;
 }
+
+.suggestion {
+    font-size: x-large;
+    margin: 2em;
+}
+
+.suggestion-body {
+    margin-top: 1em;
+}
+
+.suggestion-name, .suggestion-area {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.suggestion-speed, .suggestion-price {
+    text-decoration: underline;
+}

@@ -1,10 +1,10 @@
-﻿<h3>You should eat at...</h3>
-<h2>@Model.Name</h2>, in <strong>@Model.Area</strong>
+﻿<section class="suggestion">
+    <h3>You should eat at...</h3>
 
-You can eat @Model.Speed for a @Model.Price price.
+    <div class="suggestion-body">
+        <span class="suggestion-name">@Model.Name</span>, in or around <span class="suggestion-area">@Model.Area</span>
+        <br/>
+        You can eat <span class="suggestion-speed">@Model.Speed</span> for a <span class="suggestion-price">@Model.Price price</span>.
+    </div>
+</section>
 
-<div class="align-right">
-    <a id="btnhiveMeAnother" role="button" class="btn btn-default" asp-area="" asp-controller="LunchRecommendation" asp-action="Suggest">
-        This sucks, give me something else!
-    </a>
-</div>
