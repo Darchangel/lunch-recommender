@@ -1,5 +1,4 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
 }
 
@@ -39,4 +38,10 @@ textarea {
 
 .align-right {
     text-align: right;
+}
+
+.btn-main {
+    font-size: x-large;
+    margin: 1em;
+    margin-left: 2em;
 }

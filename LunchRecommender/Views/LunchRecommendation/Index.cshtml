@@ -5,15 +5,18 @@
 
 <h1>Where should I go for lunch?</h1>
 
-<div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
-        <a id="btnGiveMeSomething" role="button" class="btn btn-default" asp-area="" asp-controller="LunchRecommendation" asp-action="Suggest">
-            Just give me something!
-        </a>
-    </div>
-</div>
-
 @if(@Model != null)
 {
     Html.RenderPartial("_RecommendedResult.cshtml");
 }
+
+<a id="btnGiveMeSomething" role="button" class="btn btn-info btn-main" asp-area="" asp-controller="LunchRecommendation" asp-action="Suggest">
+@if(@Model == null)
+{
+    <span>Just give me something!</span>
+}
+else
+{
+    <span>Give me something else!</span>
+}
+</a>
