@@ -14,13 +14,13 @@ namespace LunchRecommender.Controllers
             _lunchPlaceRepository = lunchPlaceRepository;
         }
 
-        // GET: /<controller>/
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
+        [HttpGet]
         public IActionResult Suggest()
         {
             LunchPlace suggestedLunchPlace = _lunchPlaceRepository.GetRandomLunchPlace();
